@@ -1,0 +1,22 @@
+<% provide(:title, "New medal") %>
+
+<h1>New Medal</h1>
+
+<%= form_for(@medal) do |f| %>
+	<%= render 'shared/error_messages', object: @medal %>
+
+	<%= f.label :competitor_id, "Competitor" %>
+	<%= f.collection_select :competitor_id, Competitor.all, :id, :name, class: 'form-control' %>
+
+	<%= f.label :tournament_id, "Tournament" %>
+	<%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: 'form-control' %>
+
+	<%= f.label :value, "Place" %>
+	<%= f.radio_button :value, 9 %> Gold
+	<%= f.radio_button :value, 3 %> Silver
+	<%= f.radio_button :value, 1 %> Bronze
+
+	<%= f.submit "Add medal", class: "btn btn-primary" %>
+
+<% end %>	
+

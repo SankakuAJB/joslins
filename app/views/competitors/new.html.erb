@@ -1,0 +1,13 @@
+<% provide(:title, "New competitor") %>
+
+<h1>New competitor</h1>
+
+<%= form_for(@competitor) do |f| %>
+	<%= render 'shared/error_messages', object: @competitor %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' %>
+
+	<%= f.submit "Add competitor" %>
+
+<% end %>
