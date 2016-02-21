@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root                         'competitors#index'
 
   get 'login'               => 'sessions#new'
-  post' login'              => 'sessions#new'
+  post 'login'              => 'sessions#create'
   delete 'logout'           => 'sessions#destroy'
 
   get 'addcompetitor'       => 'competitors#new'
