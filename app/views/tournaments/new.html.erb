@@ -9,10 +9,11 @@
 	<%= f.text_field :name, class: 'form-control' %>
 
 	<%= f.label :multiplier %>
-	<%= f.radio_button :multiplier, 1 %> 1 
-	<%= f.radio_button :multiplier, 2 %> 2
-	<%= f.radio_button :multiplier, 3 %> 3
+	<%= f.radio_button :multiplier, 1 %><%= f.label :multiplier, '  1' %>
+	<%= f.radio_button :multiplier, 2 %><%= f.label :multiplier, '  2' %>
+	<%= f.radio_button :multiplier, 3 %><%= f.label :multiplier, '  3' %>
+	<%= f.radio_button :multiplier, 4 %><%= f.label :multiplier, '  4' %>
 
-	<%= f.submit "Add tournament", class: "btn btn-primary" %>
+	<%= f.submit "Add tournament", class: "btn btn-primary", :style => "display:block" %>
 
 <% end %>

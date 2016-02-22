@@ -1,3 +1,16 @@
 <% provide(:title, "Leaderboard") %>
 
 <h1>Leaderboard</h1>
+
+<table id="leaderboard">
+	<tr>
+		<th><%= sortable "name" %></th>
+		<th><%= sortable "score" %></th>
+	</tr>
+	<% @competitors.each do |competitor| %>
+	<tr>
+		<td><%= competitor.name %></td>
+		<td><%= competitor.score.to_s %></td>
+	</tr>
+	<% end %>
+</table>

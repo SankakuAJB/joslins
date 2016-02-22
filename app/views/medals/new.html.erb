@@ -5,18 +5,18 @@
 <%= form_for(@medal) do |f| %>
 	<%= render 'shared/error_messages', object: @medal %>
 
-	<%= f.label :competitor_id, "Competitor" %>
-	<%= f.collection_select :competitor_id, Competitor.all, :id, :name, class: 'form-control' %>
+	<%= f.label :competitor_id, "Competitor  " %>
+	<%= f.collection_select :competitor_id, Competitor.all, :id, :name, class: 'form-control' %><br>
 
-	<%= f.label :tournament_id, "Tournament" %>
-	<%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: 'form-control' %>
+	<%= f.label :tournament_id, "Tournament  " %>
+	<%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: 'form-control' %><br>
 
-	<%= f.label :value, "Place" %>
-	<%= f.radio_button :value, 9 %> Gold
-	<%= f.radio_button :value, 3 %> Silver
-	<%= f.radio_button :value, 1 %> Bronze
+	<%= f.label :value, "Place", :style => "display:block" %>
+	<%= f.radio_button :value, 9 %><%= f.label :value, 'Gold' %>
+	<%= f.radio_button :value, 3 %><%= f.label :value, 'Silver' %>
+	<%= f.radio_button :value, 1 %><%= f.label :value, 'Bronze' %>
 
-	<%= f.submit "Add medal", class: "btn btn-primary" %>
+	<%= f.submit "Add medal", class: "btn btn-primary", :style => "display:block" %>
 
 <% end %>	
 

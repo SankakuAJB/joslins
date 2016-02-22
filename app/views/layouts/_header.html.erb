@@ -4,10 +4,10 @@
 		<nav>
 			<ul class="nav navbar-nav navbar-right">
 				<% if logged_in? %>
-					<li><%= link_to "Add tournament", '#' %></li>
-					<li><%= link_to "Add competitor", '#' %></li>
-					<li><%= link_to "Add medal", '#' %></li>
-					<li><%= link_to "Log out", '#' %></li>
+					<li><%= link_to "Add tournament", addtournament_path %></li>
+					<li><%= link_to "Add competitor", addcompetitor_path %></li>
+					<li><%= link_to "Add medal", addmedal_path %></li>
+					<li><%= link_to "Log out", logout_path, method: "delete" %></li>
 				<% else %>
 					<li><%= link_to "Log in", login_path %></li>
 				<% end %>

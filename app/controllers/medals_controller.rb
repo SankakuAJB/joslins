@@ -1,4 +1,5 @@
 class MedalsController < ApplicationController
+	include MedalsHelper
 
 	def new
 		@medal = Medal.new
