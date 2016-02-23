@@ -6,12 +6,14 @@
 	<tr>
 		<th><%= sortable "competitor_id" %></th>
 		<th><%= sortable "tournament_id" %></th>
+		<th>Medal</th>
 		<th>Value</th>
 	</tr>
 	<% @medals.each do |medal| %>
 	<tr>
 		<td><%= link_to medal.competitor.name, showcompetitor_path(id: medal.competitor.id)  %></td>
 		<td><%= medal.tournament.name %></td>
+		<td><%= medal_colour(medal.value) %></td>
 		<td><%= medal.value * medal.tournament.multiplier %></td>
 	</tr>
 	<% end %>
