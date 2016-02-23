@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'addcompetitor'       => 'competitors#new'
   post 'addcompetitor'      => 'competitors#create'
   delete 'removecompetitor' => 'competitors#destroy'
+  get 'showcompetitor'      => 'competitors#show'
 
   get 'addtournament'       => 'tournaments#new'
   post 'addtournament'      => 'tournaments#create'

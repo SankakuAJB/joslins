@@ -224,6 +224,9 @@ label {
 
 #leaderboard{
   width: 100%;
+  th {
+    padding-bottom: 5px;
+  }
 }
 
 .pretty th .current {
@@ -238,4 +241,14 @@ label {
 
 .pretty th .desc {
   background-image: url(/images/down_arrow.gif);
+}
+
+/* Tournament board */
+
+#tournaments th {
+  width: 50%;
+}
+
+.container .countainer #tournaments {
+  margin: 0, auto;
 }

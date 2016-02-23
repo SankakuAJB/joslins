@@ -2,6 +2,7 @@ class CompetitorsController < ApplicationController
 	include CompetitorsHelper
 	include ApplicationHelper
 	helper_method :sort_column, :sort_direction
+	before_action :logged_in_user, only: [:new, :create]
 
 	def index
 		@competitors = Competitor.order(sort_column + " " + sort_direction)
@@ -25,13 +26,18 @@ class CompetitorsController < ApplicationController
 		end
 	end
 
+	def show
+		@competitor = Competitor.find(params[:id])	
+		@medals = @competitor.medals
+	end
+
 
 	private
 
 		def competitor_params
 			params.require(:competitor).permit(:name)
 		end
-
+		
 		def sort_column
 			Competitor.column_names.include?(params[:sort]) ? params[:sort] : "name"
 		end

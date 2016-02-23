@@ -1,0 +1,16 @@
+<% provide(:title, "Tournaments") %>
+
+<h1>Tournaments</h1>
+
+<table id="leaderboard">
+	<tr>
+		<th><%= sortable "name" %></th>
+		<th><%= sortable "multiplier" %></th>
+	</tr>
+	<% @tournaments.each do |tournament| %>
+	<tr>
+		<td><%= link_to tournament.name, tournament_path(id: tournament.id) %></td>
+		<td><%= tournament.multiplier %></td>
+	</tr>
+	<% end %>
+</table>

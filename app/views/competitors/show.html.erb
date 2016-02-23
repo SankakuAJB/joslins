@@ -1,0 +1,17 @@
+<% provide(:title, "#{@competitor.name}") %>
+
+<h1><%= @competitor.name %>'s Tournaments</h1>
+<table id="tournaments">
+	<tr>
+		<th>Tournament</th>
+		<th>Medal</th>
+		<th>Value</th>
+	</tr>
+	<% @medals.each do |medal| %>
+	<tr>
+		<td><%= medal.tournament.name %></td>
+		<td><%= medal_colour(medal.value) %></td>
+		<td><%= medal.value * medal.tournament.multiplier %></td>
+	</tr>
+	<% end %>
+</table>

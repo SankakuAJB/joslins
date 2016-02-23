@@ -1,0 +1,18 @@
+<% provide(:title, "Medals") %>
+
+<h1>Medals</h1>
+
+<table id="leaderboard">
+	<tr>
+		<th><%= sortable "competitor_id" %></th>
+		<th><%= sortable "tournament_id" %></th>
+		<th>Value</th>
+	</tr>
+	<% @medals.each do |medal| %>
+	<tr>
+		<td><%= link_to medal.competitor.name, showcompetitor_path(id: medal.competitor.id)  %></td>
+		<td><%= medal.tournament.name %></td>
+		<td><%= medal.value * medal.tournament.multiplier %></td>
+	</tr>
+	<% end %>
+</table>

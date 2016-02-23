@@ -9,7 +9,7 @@
 	</tr>
 	<% @competitors.each do |competitor| %>
 	<tr>
-		<td><%= competitor.name %></td>
+		<td><%= link_to competitor.name, showcompetitor_path(id: competitor.id)  %></td>
 		<td><%= competitor.score.to_s %></td>
 	</tr>
 	<% end %>
