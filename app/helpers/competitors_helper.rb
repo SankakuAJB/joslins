@@ -11,7 +11,7 @@ module CompetitorsHelper
 	def medal_colour(value)
 		if value == 9
 			return "Gold"
-		elsif value == 3
+		elsif value == 5
 			return "Silver"
 		else
 			return "Bronze"
