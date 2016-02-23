@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    attr_accessor :remember_token
 	validates :name, presence: true
 	validates :password, presence: true
 	has_secure_password
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
 
     # Returns a random token.
     def User.new_token
-    	SecureRandom.urlsafe_basea64
+    	SecureRandom.urlsafe_base64
     end
 
     # Remembers a user in the database for use in persistent sessions.
@@ -24,7 +25,7 @@ class User < ActiveRecord::Base
 	# Returns true if the given token matches the digest.
 	def authenticated?(remember_token)
 		return false if remember_digest.nil?
-		BCrypt::Password.new(remember_dgiest).is_password?(password_token)
+		BCrypt::Password.new(remember_digest).is_password?(password_token)
 	end
 
 	# Forgets a user.
