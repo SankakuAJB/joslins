@@ -26,7 +26,7 @@ class MedalsController < ApplicationController
 	private
 
 		def medal_params
-			params.require(:medal).permit(:value, :tournament_id, :competitor_id)
+			params.require(:medal).permit(:value, :tournament_id, :competitor_id, :absolute)
 		end
 
 		def sort_column

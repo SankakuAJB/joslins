@@ -208,6 +208,15 @@ label {
   padding-right: 5px;
 }
 
+.control-group {
+  overflow: hidden;
+  display: block;
+  height: 100%;
+  label {
+    float: left;
+  }
+}
+
 /* Users index */
 
 .users {
@@ -249,6 +258,6 @@ label {
   width: 50%;
 }
 
-.container .countainer #tournaments {
+.container .container #tournaments {
   margin: 0, auto;
 }

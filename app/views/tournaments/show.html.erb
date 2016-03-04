@@ -5,12 +5,18 @@
 	<tr>
 		<th>Name</th>
 		<th>Medal</th>
+		<th>Absolute</th>
 		<th>Value</th>
 	</tr>
 	<% @medals.each do |medal| %>
 	<tr>
-		<td><%= medal.competitor.name %></td>
+		<td><%= link_to medal.competitor.name, competitor_path(id: medal.competitor.id) %></td>
 		<td><%= medal_colour(medal.value) %></td>
+		<td>
+			<% if medal.absolute == 1 %>
+				&#10003
+			<% end %>
+		</td>
 		<td><%= medal.value * medal.tournament.multiplier %></td>
 	</tr>
 	<% end %>
